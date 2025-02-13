@@ -1,0 +1,42 @@
+# Ignore target folder
+target/
+src/main/resources/fcm/firebase-service-account.json
+
+# Ignore Maven Wrapper JAR
+!.mvn/wrapper/maven-wrapper.jar
+
+# Ignore target directories inside source folders
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS (Spring Tool Suite) ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+# Ignore Firebase service account JSON file
+target/classes/firebase-service-account.json
+"src/main/resources/fcm/firebase-service-account.json" 

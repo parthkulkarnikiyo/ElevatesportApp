@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WebSocket Test</title>
+</head>
+<body>
+    <h2>WebSocket Score Updates</h2>
+    <pre id="messages"></pre>
+    
+    <script>
+        const socket = new WebSocket("ws://localhost:8096/ws");
+        
+        socket.onopen = function() {
+            console.log("Connected to WebSocket");
+            socket.send(JSON.stringify({"subscribe": "/topic/score-updates"}));
+        };
+
+        socket.onmessage = function(event) {
+            document.getElementById("messages").innerText += event.data + "\n";
+            console.log("Received:", event.data);
+        };
+
+        socket.onerror = function(error) {
+            console.log("WebSocket Error:", error);
+        };
+
+        socket.onclose = function() {
+            console.log("WebSocket Closed");
+        };
+    </script>
+</body>
+</html>
